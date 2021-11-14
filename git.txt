@@ -1,1 +1,23 @@
-hola
+Para crear el repositorio en local y subirlo a github
+
+en la consola, posicionarnos en la carpeta donde está el proyecto (en vsc)
+git init (para inicializar un repositorio local de git)
+git .add (para agregar todos los archios que estén dentro de la carpeta, antes hay que hacer el .git ignore con modules)
+git status (para ver que se hayan agregado todos los archivos al repositorio local)
+git commit -m "comentario" para comitear los cambios
+
+crear un repositorio en github
+ir a la consola y seguir con el siguiente comando:
+git remote add origin url_del_proyecto
+git push -u origin main
+
+listo, ahora se visualizan los archivos del proyecto en github
+
+-cuando actualizamos/agregamos archivos, se hace lo mismo para subir los cambios a github:
+
+git status para que nos muestre los cambios/archivos nuevos
+git commit -m "comentario"
+git push -u origin main (nos saltamos el comando de la url porque git ya sabe que es ahí donde tiene que subir los cambios)
+
+ESTO SIEMPRE SE HACE EN LA CONSOLA EN LA RUTA DE LA MISMA CARPETA DONDE SE TIENE EL PROYECTO
+en mi caso es mariacavieresperez@air-de-maria Express-1 % , donde Express-1 es la carpeta de mi proyecto, ahí ingreso todos los comandos
