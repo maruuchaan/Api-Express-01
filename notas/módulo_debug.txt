@@ -1,0 +1,3 @@
+es para depurar ciertas funciones, por ejemplo, hacer que los registros de morgan (http) se realicen sólo en dev y no en production
+
+se instala npm i debug

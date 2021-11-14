@@ -1,0 +1,20 @@
+para registrar las peticiones http request
+
+se puede utilizar un middleware de terceros llamado "morgan"
+para usarlo, se debe instalar morgan y hacer el require de morgan
+
+npm install morgan
+nodemon app.js
+
+el registro de la petición http se puede registrar en diferentes formatos, ver github.com/expressjs/morgan
+
+en el ejemplo usamos el fomrato 'tiny' que es el que viene por defecto, quedando el código así:
+
+const morgan = require('morgan');
+
+app.use(morgan('tiny')); //tiny es el formato por defecto (ver documentación)
+console.log('Morgan habilitado...');
+
+cuando se hace la solicitud GET en postman y se ve la consola, se ve el registro de la petición http: GET /usuarios 200 80 - 5.892 ms
+luego un POST: POST /usuarios 200 25 - 8.417 ms
+

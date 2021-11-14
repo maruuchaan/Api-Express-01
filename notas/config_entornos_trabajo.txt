@@ -1,0 +1,12 @@
+se usa el módulo config para crear los entornos de desarrollo y producción
+
+se ve en la página de npm
+
+se debe instalar config
+crear la carpeta config
+
+por defecto, la app toma desarrollo como entorno
+para cambiar el entorno de trabajo, se usa el comando export NODE_ENV=production y luego nuevamente nodemon app.js (si es que se está ejecutando)
+y ahí en la consola cambian los datos a los ue están en el archivo production
+
+

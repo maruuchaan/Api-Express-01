@@ -1,0 +1,35 @@
+(npm.com/joi)
+npm i @hapi/joi
+
+app.post('/usuarios', (req, res) => {
+    
+    const schema = Joi.object({
+        nombre: Joi.string().min(3).required()
+    });
+    const {error, value} = schema.validate({nombre: req.body.nombre}); //value toma el valor de req.body.nombre es el parámetro que estoy recibiendo
+        if(!error) {
+            const usuario = {
+                    id: usuarios.length +1, //.length+1 devuelve el tamaño del objeto, en este caso el id de usuarios, hace que sea correlativo
+                    nombre: value.nombre 
+                };
+                usuarios.push(usuario);//acá se pasa "usuario" al arreglo "usuarios" mediante .push
+                res.send(usuario);
+        }else{
+            const mensaje = error.details[0].message;
+            res.status(400).send(mensaje)
+        };
+
+Joi funciona con esquemas
+
+joi.object = crea un objeto (no se cambia naada)
+username = parámetro que va a recibir el esquema, en el ejemplo, es el nombre
+Joi.string() = que lo va a guardar como string
+.alphanum().min(3).max(30).required() = son las condiciones que el parámetro tiene que cumplir para que la validación se cumpla
+en este ejemplo, que sea alfanumérico, que tenga mínimo 3 letras, y que sea obligatorio ingresar algo
+
+result= resultado de la validación
+schema.validate() función para activar la validación, recibe el parámetro que va a recibir y la condición
+nombre: req.body.nombre = está validando que nombre sea igual al parámetro que se está recibiendo en req.body.nombre
+
+error y value son parámetros que devuelve la consola
+por eso se le asignaron esos nombres ya cambió la validación

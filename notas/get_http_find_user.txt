@@ -1,0 +1,30 @@
+
+función para encontrar a un usuario a través de una petición get por http
+
+esta variable es para manejar data en una operación get con http (lo creó en duro en el código)
+
+const usuarios = [ 
+    {id:1, nombre: 'Ricardo'},
+    {id:2, nombre: 'Daiki'},
+    {id:3, nombre: 'Airi'}
+];
+
+
+app.get('/usuarios/:id', (req,res) => {
+    //res.send(req.params.id);
+    let usuario = usuarios.find(u => u.id === parseInt(req.params.id));
+    if(!usuario) res.status(404).send('El usuario no fue encontrado');
+    res.send(usuario);
+});
+
+variable let USUARIO: es lo que va responder la función (el usuario que se se está buscando), se usa let porque puede variar
+
+usuarios.find(): función de js para encontrar info en este caso en un arreglo de acuerdo a un valor que le indicamos, 
+y a su vez, esta función recibe una función interna que permite realizar la búsqueda, la cual recibe un objeto, en este caso,
+recibe el objeto USUARIOS (con la lista de usuarios) pero se le asigna un nombre, en el ejemplo, es la "u"
+
+u.id === parseInt(req.params.id) =  acá preguntamos si el objeto u.id es igual a algo (la función find recorre el arreglo buscando el parámetro que se le indique según la condicióon)
+el parseInt.params.id nos indica el id que estamos recibiendo, por lo que hace un match
+el parseInt se hace porque el id es numérico, y en la petición get el parámetro viene como string, por lo que hay que parsearlo
+
+

@@ -1,0 +1,30 @@
+bloques de código que hacen en el enlace entre la respuesta entre el cliente y el servidor, son funciones específicas
+
+primero se ejecutan los middleware y después las rutas
+
+//creando middlewares personalizados
+app.use(function(req,res,next){
+    console.log('Conectando...');
+    next(); //variable next es para terminar el proceso de llamada de la función
+});
+
+//autenticación
+app.use(function(req,res,next){
+    console.log('Autenticando...');
+    next();
+})
+
+Es buena práctica dejarlos en hojas separadas del código, por eso se dejaron aparte
+----------------------------------------------------------------------------------------------------------------------------
+URLenconded
+permite trabajar querystrings, por ejemplo /valor1=valor&valor2=valor&valor3...
+es para recibir datos desde formularios
+
+app.post('/usuarios', (req, res) => {
+    
+    let body = req.body;
+    console.log(body.nombre);
+    res.json({
+        body
+    });
+

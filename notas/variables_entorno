@@ -1,0 +1,18 @@
+se usan para estandarizar variables y no hacer cambios en el código
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Escuchando en el puerto ${port}...`);
+});
+
+en el ejemplo:
+
+en la const port guardamos la variable que creamos llamada PORT
+el || 3000 significa que si no se encuentra el valor de PORT,  
+va a buscar el valor de port y se le va a asignar el puerto 3000
+
+es uno o el otro
+
+la variable PORT se definió por consola usando: export =5000
+entonces PORT queda con valor 5000 aunque no esté en el código

@@ -1,0 +1,7 @@
+imágenes, archivos que se desee acceder desde afuera
+
+se usa otro middleware: express.static('public'); y dentro se le indica el nombre del archivo
+
+acá se accede a la carpeta "public' creada en el proyecto, que contiene el archivo prueba.txt
+
+para acceder al recurso, se ingresa directamente a la url: localhost/3000/prueba_txt   (nombre_recurso)
